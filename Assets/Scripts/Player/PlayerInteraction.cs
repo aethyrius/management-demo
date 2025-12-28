@@ -6,16 +6,9 @@ using UnityEngine.UIElements;
 
 public class PlayerInteraction : MonoBehaviour {
 
-    //public static PlayerInteraction Instance { get; private set; }
-
     public float interactRadius = 4f;
     public Transform holding;
     public Interactable interactable;
-
-    private void Awake()
-    {
-        //Instance = this;
-    }
 
     void Update()
     {

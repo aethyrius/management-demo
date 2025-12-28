@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 public class Register : Interactable
@@ -38,8 +39,8 @@ public class Register : Interactable
     public Customer GetCurrentCustomer()
     {
         if (!spawner) return null;
-        Customer next = spawner.GetNextCustomer();
 
+        Customer next = spawner.GetNextCustomer();
         if (next == null) return null;
 
         if (!next.CanInteract()) return null;
@@ -50,11 +51,9 @@ public class Register : Interactable
     public override void SetHighlighted(bool highlighted)
     {
         Customer customer = GetCurrentCustomer();
-        if (customer)
-        {
-            customer.GetComponent<SpriteRenderer>().color = highlighted ? 
-                                                            customer.highlightColor : 
-                                                            customer.defaultColor;
+        if (customer) {
+            SpriteRenderer customerSprite = customer.GetComponent<SpriteRenderer>();
+            customerSprite.color = highlighted ? customer.highlightColor : customer.defaultColor;
         }
     }
 }
