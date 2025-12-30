@@ -24,14 +24,26 @@ public class Surface : Interactable
         {
             PickUpItem(player);
         }
+
+        else if (player.holding && placedItem)
+        {
+            ContainerItem container = placedItem.GetComponent<ContainerItem>();
+            if (container)
+            {
+                Item playerItem = player.holding.GetComponent<Item>();
+                
+                if (playerItem is CupItem || playerItem is ContainerItem)
+                {
+                    container.Serve(playerItem);
+                }
+            }
+        }
     }
 
     private void PlaceItem(PlayerInteraction player)
     {
         placedItem = player.holding;
         player.holding = null;
-
-        Debug.Log("Placed item");
 
         placedItem.SetParent(transform);
         placedItem.localPosition = Vector3.zero;

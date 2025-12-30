@@ -10,12 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c325647bcee19694587f97ecfe034335, type: 3}
-  m_Name: CupData
+  m_Name: KettleData
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  itemName: Cup
+  itemName: Kettle
   allowedAdditions:
   - {fileID: 11400000, guid: f6534c90abd6efc40b1b12eab1700a46, type: 2}
-  - {fileID: 11400000, guid: 3c4a0709c6f0fce499291f302b07b3b5, type: 2}
   - {fileID: 11400000, guid: fc6396c40a387d344b6deab78a09ad4b, type: 2}
+  - {fileID: 11400000, guid: 5ebb687514d68884198dd10653ea6b0d, type: 2}
   - {fileID: 11400000, guid: 208c51e61c428534fa9ab9cbda040ff1, type: 2}
-  conversions: []
+  conversions:
+  - one: {fileID: 11400000, guid: fc6396c40a387d344b6deab78a09ad4b, type: 2}
+    two: {fileID: 11400000, guid: 5ebb687514d68884198dd10653ea6b0d, type: 2}
+    result: {fileID: 11400000, guid: 208c51e61c428534fa9ab9cbda040ff1, type: 2}

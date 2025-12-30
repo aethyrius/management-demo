@@ -26,8 +26,6 @@ public class CustomerSpawner : MonoBehaviour
         {
             yield return new WaitForSeconds(Random.Range(minSpawnTime, maxSpawnTime));
 
-            Debug.Log("SpawnRoutine timer ended");
-
             if (activeCustomers.Count < maxCustomers)
             {
                 SpawnCustomer();
@@ -39,13 +37,29 @@ public class CustomerSpawner : MonoBehaviour
     {
         GameObject customer = Instantiate(customerPrefab);
         Customer script = customer.AddComponent<Customer>();
-        script.targetPoint = registerPoint;
         script.desiredItem = database.GetRandomDrink();
+        script.spawner = this;
+        script.registerPoint = registerPoint;
         activeCustomers.Add(script);
 
         Debug.Log("Spawned customer");
     }
 
+    public Customer GetPrevCustomerInList(Customer customer)
+    {
+        int index = -1;
+        foreach (Customer curr in activeCustomers)
+        {
+            if ((index != -1) && (customer == curr))
+            {
+                return activeCustomers[index];
+            }
+
+            index++;
+        }
+
+        return null;
+    }
     public Customer GetNextCustomer()
     {
         if (activeCustomers.Count == 0) return null;

@@ -20,10 +20,10 @@ public class PlayerInteraction : MonoBehaviour {
                 interactable.SetHighlighted(false);
 
             interactable = closest;
-
-            if (interactable)
-                interactable.SetHighlighted(true);
         }
+
+        if (interactable)
+            interactable.SetHighlighted(true);
 
         /* Interact */
 

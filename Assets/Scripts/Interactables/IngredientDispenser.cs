@@ -9,18 +9,14 @@ public class IngredientDispenser : Interactable
         if (player.holding)
         {
             CupItem drink = player.holding.GetComponent<CupItem>();
-
             if (drink)
             {
-                if (drink.data.allowedAdditions.Contains(ingredient) &&
-                    !drink.currentAdditions.Contains(ingredient))
-                {
-                    drink.GetComponent<CupItem>().currentAdditions.Add(ingredient);
-                }
-                else
-                {
-                    Debug.Log("Addition not allowed");
-                }
+                drink.AttemptIngredientAddition(ingredient);
+            }
+
+            ContainerItem container = player.holding.GetComponent<ContainerItem>();
+            if (container) {
+                container.AttemptIngredientAddition(ingredient);
             }
         }
     }

@@ -1,6 +1,4 @@
-using NUnit.Framework;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Item : Interactable
 {
@@ -19,6 +17,22 @@ public class Item : Interactable
 
     public virtual bool MatchesOrder(DrinkRecipe recipe)
     {
+        return false;
+    }
+
+    public virtual bool AttemptIngredientAddition(IngredientData ingredient)
+    {
+        return false;
+    }
+
+    public bool CheckForContainer(Item item)
+    {
+        if (item is ContainerItem)
+        {
+            Debug.Log("Is container");
+            return true;
+        }
+
         return false;
     }
 }
