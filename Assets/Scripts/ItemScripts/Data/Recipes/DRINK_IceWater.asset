@@ -16,4 +16,4 @@ MonoBehaviour:
   requiredAdditions:
   - {fileID: 11400000, guid: 3c4a0709c6f0fce499291f302b07b3b5, type: 2}
   - {fileID: 11400000, guid: f6534c90abd6efc40b1b12eab1700a46, type: 2}
-  color: {r: 0.6084906, g: 0.96398956, b: 1, a: 0}
+  sprite: {fileID: -7724190343550279366, guid: e62c34c88178f0848ac7c184d0dac055, type: 3}

@@ -15,4 +15,4 @@ MonoBehaviour:
   drinkName: Water
   requiredAdditions:
   - {fileID: 11400000, guid: f6534c90abd6efc40b1b12eab1700a46, type: 2}
-  color: {r: 0.31181026, g: 0.650423, b: 0.7264151, a: 0}
+  sprite: {fileID: -6105571771558880617, guid: 250934f4c927f2640bbba56175a3ee38, type: 3}

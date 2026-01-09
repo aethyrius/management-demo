@@ -49,7 +49,7 @@ public class Utility : Surface
         Color originalColor = spriteRenderer.color;
         spriteRenderer.color = Color.yellow;
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
 
         spriteRenderer.color = originalColor;
     }

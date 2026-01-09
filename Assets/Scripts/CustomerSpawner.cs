@@ -35,8 +35,8 @@ public class CustomerSpawner : MonoBehaviour
 
     private void SpawnCustomer()
     {
-        GameObject customer = Instantiate(customerPrefab);
-        Customer script = customer.AddComponent<Customer>();
+        GameObject customer = Instantiate(customerPrefab, transform.position, transform.rotation);
+        Customer script = customer.GetComponent<Customer>();
         script.desiredItem = database.GetRandomDrink();
         script.spawner = this;
         script.registerPoint = registerPoint;

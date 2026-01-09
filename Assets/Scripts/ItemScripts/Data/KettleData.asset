@@ -22,3 +22,12 @@ MonoBehaviour:
   - one: {fileID: 11400000, guid: fc6396c40a387d344b6deab78a09ad4b, type: 2}
     two: {fileID: 11400000, guid: 5ebb687514d68884198dd10653ea6b0d, type: 2}
     result: {fileID: 11400000, guid: 208c51e61c428534fa9ab9cbda040ff1, type: 2}
+  visuals:
+  - combination: []
+    sprite: {fileID: 7693285938819940142, guid: 01b6927f424829a429aa49f5c41a0c8c, type: 3}
+  - combination:
+    - {fileID: 11400000, guid: f6534c90abd6efc40b1b12eab1700a46, type: 2}
+    sprite: {fileID: 1262704206881171558, guid: 71316fd5a32a6e940907e10bb321db43, type: 3}
+  - combination:
+    - {fileID: 11400000, guid: 208c51e61c428534fa9ab9cbda040ff1, type: 2}
+    sprite: {fileID: 6716599176771581602, guid: 3453bc6903b6e5044a4180492119d8d4, type: 3}

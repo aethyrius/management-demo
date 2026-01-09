@@ -19,3 +19,19 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fc6396c40a387d344b6deab78a09ad4b, type: 2}
   - {fileID: 11400000, guid: 208c51e61c428534fa9ab9cbda040ff1, type: 2}
   conversions: []
+  visuals:
+  - combination: []
+    sprite: {fileID: -6899248233868114457, guid: 9b6e1054caf7e49479c29c5b938848e5, type: 3}
+  - combination:
+    - {fileID: 11400000, guid: 3c4a0709c6f0fce499291f302b07b3b5, type: 2}
+    sprite: {fileID: 8690311588702655226, guid: e73837e0523a8ff498a3d638ae7aa595, type: 3}
+  - combination:
+    - {fileID: 11400000, guid: f6534c90abd6efc40b1b12eab1700a46, type: 2}
+    sprite: {fileID: -6105571771558880617, guid: 250934f4c927f2640bbba56175a3ee38, type: 3}
+  - combination:
+    - {fileID: 11400000, guid: f6534c90abd6efc40b1b12eab1700a46, type: 2}
+    - {fileID: 11400000, guid: 3c4a0709c6f0fce499291f302b07b3b5, type: 2}
+    sprite: {fileID: -7724190343550279366, guid: e62c34c88178f0848ac7c184d0dac055, type: 3}
+  - combination:
+    - {fileID: 11400000, guid: 208c51e61c428534fa9ab9cbda040ff1, type: 2}
+    sprite: {fileID: 6217799423943547763, guid: 6fc9d6e433b296f42b124322ea83f515, type: 3}

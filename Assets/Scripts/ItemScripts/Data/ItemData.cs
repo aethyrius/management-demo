@@ -14,6 +14,15 @@ public class ItemData : ScriptableObject
         public IngredientData two;
         public IngredientData result;
     }
-
     public List<IngredientConversion> conversions;
+
+
+    [System.Serializable]
+    public struct IngredientVisuals
+    {
+        public List<IngredientData> combination;
+        public Sprite sprite;
+    }
+    public List<IngredientVisuals> visuals;
+
 }

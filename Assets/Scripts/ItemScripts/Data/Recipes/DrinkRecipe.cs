@@ -6,5 +6,5 @@ public class DrinkRecipe : ScriptableObject
 {
     public string drinkName;
     public List<IngredientData> requiredAdditions;
-    public Color color;
+    public Sprite sprite;
 }

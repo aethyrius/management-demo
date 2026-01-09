@@ -5,11 +5,11 @@ public class Interactable : MonoBehaviour
 {
     public Color defaultColor;
     public Color highlightColor = Color.gray;
+    public SpriteRenderer spriteRenderer;
 
-    private SpriteRenderer spriteRenderer;
     private BoxCollider2D collision;
 
-    private void Awake()
+    public void Awake()
     {
         collision = GetComponent<BoxCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();

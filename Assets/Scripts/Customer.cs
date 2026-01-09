@@ -1,11 +1,15 @@
 using NUnit.Framework;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Customer : MonoBehaviour
 {
     public CustomerSpawner spawner;
     public DrinkRecipe desiredItem;
+    [SerializeField] private TMP_Text orderText;
+    [SerializeField] private SpriteRenderer orderSprite;
     public Color defaultColor = Color.white;
     public Color highlightColor = Color.gray;
 
@@ -48,9 +52,12 @@ public class Customer : MonoBehaviour
     {
         if (!hasPlacedOrder)
         {
-            Debug.Log("Customer wants " + desiredItem.name);
+            //Debug.Log("Customer wants " + desiredItem.name);
             OrderManager.Instance.AddOrder(desiredItem);
             hasPlacedOrder = true;
+
+            orderText.text = desiredItem.drinkName;
+            orderSprite.sprite = desiredItem.sprite;
         }
     }
 

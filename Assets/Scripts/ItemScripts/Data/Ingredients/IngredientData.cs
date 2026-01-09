@@ -5,6 +5,7 @@ using UnityEngine;
 public class IngredientData : ScriptableObject
 {
     public string ingredientName;
+    public Sprite sprite;
     public Dictionary<UtilityData, IngredientData> convertsTo;
 
     [System.Serializable]

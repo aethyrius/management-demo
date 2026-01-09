@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Item : Interactable
@@ -33,6 +34,16 @@ public class Item : Interactable
             return true;
         }
 
+        return false;
+    }
+
+    public virtual void UpdateVisual()
+    {
+        return;
+    }
+
+    public virtual bool MatchesCombination()
+    {
         return false;
     }
 }
