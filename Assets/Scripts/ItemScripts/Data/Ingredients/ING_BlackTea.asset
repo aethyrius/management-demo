@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: ING_BlackTea
   m_EditorClassIdentifier: Assembly-CSharp::IngredientData
   ingredientName: Black Tea
+  sprite: {fileID: -6720129546151524751, guid: b299c6dbd3762fb41a30fdec02993965, type: 3}
+  defaultTemperature: 1
   utilityConversions: []

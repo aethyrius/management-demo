@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ING_Water
   m_EditorClassIdentifier: Assembly-CSharp::IngredientData
   ingredientName: Water
-  sprite: {fileID: -6105571771558880617, guid: 250934f4c927f2640bbba56175a3ee38, type: 3}
+  sprite: {fileID: -6105571771558880617, guid: dae980a3c9d11da47b2b01c72b3163e5, type: 3}
   utilityConversions:
   - utility: {fileID: 11400000, guid: 8e1f3b94e6628474ba211ca7b8aa6633, type: 2}
     result: {fileID: 11400000, guid: fc6396c40a387d344b6deab78a09ad4b, type: 2}

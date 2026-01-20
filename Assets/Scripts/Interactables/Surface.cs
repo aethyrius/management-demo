@@ -27,15 +27,19 @@ public class Surface : Interactable
 
         else if (player.holding && placedItem)
         {
-            ContainerItem container = placedItem.GetComponent<ContainerItem>();
-            if (container)
+            Item placed = placedItem.GetComponent<Item>();
+            Item playerItem = player.holding.GetComponent<Item>();
+
+            if (placed is ContainerItem)
             {
-                Item playerItem = player.holding.GetComponent<Item>();
-                
                 if (playerItem is CupItem || playerItem is ContainerItem)
                 {
-                    container.Serve(playerItem);
+                    (placed as ContainerItem).Serve(playerItem);
                 }
+            }
+            else if (playerItem is ContainerItem && placed is CupItem)
+            {
+                (playerItem as ContainerItem).Serve(placed);
             }
         }
     }

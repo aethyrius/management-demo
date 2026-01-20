@@ -104,6 +104,7 @@ public class ContainerItem : Item
 
         if (!ingredient)
         {
+            ChangeTemperature(Temperature.Normal);
             spriteRenderer.sprite = data.visuals[0].sprite;
             return;
         }
@@ -115,5 +116,7 @@ public class ContainerItem : Item
                 spriteRenderer.sprite = visual.sprite;
             }
         }
+
+        ChangeTemperature(ingredient.defaultTemperature);
     }
 }

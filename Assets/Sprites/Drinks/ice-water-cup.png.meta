@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5713f5a1ef287ce4ab5b2d108b24316d
+guid: ee9fdb9db07716442b639bdcabc47b97
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6899248233868114457
-    second: empty-cup_0
+      213: 6672481483311755718
+    second: ice-water-cup_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: empty-cup_0
+      name: ice-water-cup_0
       rect:
         serializedVersion: 2
         x: 3
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7e5cc0bf842f040a0800000000000000
-      internalID: -6899248233868114457
+      spriteID: 6c13b278e8a699c50800000000000000
+      internalID: 6672481483311755718
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      empty-cup_0: -6899248233868114457
+      ice-water-cup_0: 6672481483311755718
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,9 +1,46 @@
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class Item : Interactable
 {
     public ItemData data;
+    public enum Temperature
+    {
+        Normal,
+        Hot,
+        Iced
+    }
+
+    [SerializeField]
+    Temperature temperature;
+
+    private Animator animator;
+
+    public void Start()
+    {
+        animator = GetComponentInChildren<Animator>();
+    }
+
+    public void ChangeTemperature(Temperature temperature)
+    {
+        if (animator)
+        {
+            switch (temperature)
+            {
+                case (Temperature.Normal):
+                    break;
+                case (Temperature.Hot):
+                    animator.runtimeAnimatorController = data.hotAnim;
+                    break;
+                case (Temperature.Iced):
+                    animator.runtimeAnimatorController = data.icedAnim;
+                    break;
+            }
+
+            this.temperature = temperature;
+        }
+    }
 
     public override void OnInteract(PlayerInteraction player)
     {

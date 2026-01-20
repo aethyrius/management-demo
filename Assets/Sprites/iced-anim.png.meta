@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: e62c34c88178f0848ac7c184d0dac055
+guid: a216cf19fc0748343b16b9244176b16d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7724190343550279366
-    second: ice-water-cup 1_0
+      213: -6222012381626579663
+    second: iced-anim_0
+  - first:
+      213: -3365890960107453925
+    second: iced-anim_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -47,7 +50,7 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
+  spriteExtrude: 19
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
@@ -100,23 +103,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ice-water-cup 1_0
+      name: iced-anim_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 3
-        width: 9
-        height: 10
+        x: 0
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a31ee2b9ec92ec490800000000000000
-      internalID: -7724190343550279366
+      spriteID: 135c01d54b8f6a9a0800000000000000
+      internalID: -6222012381626579663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iced-anim_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b12c81a4104f941d0800000000000000
+      internalID: -3365890960107453925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iced-anim_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9bfdcbd23271fb4b92a8a2d8c0dab53
+      internalID: 594050427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iced-anim_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bceb4d6fe926484e860f77c78dbed22
+      internalID: 842469147
       vertices: []
       indices: 
       edges: []
@@ -125,7 +194,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 73c16e3ccb12f32428288e1f4cd4fe73
     internalID: 0
     vertices: []
     indices: 
@@ -133,9 +202,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceOnImport
+        value: False
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      ice-water-cup 1_0: -7724190343550279366
+      iced-anim_0: -6222012381626579663
+      iced-anim_1: -3365890960107453925
+      iced-anim_2: 594050427
+      iced-anim_3: 842469147
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

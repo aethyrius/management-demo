@@ -1,2 +1,15 @@
 fileFormatVersion: 2
 guid: 92786a73cb42eec44982cfe5e636c699
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - spriteRenderer: {instanceID: 0}
+  - data: {instanceID: 0}
+  - hotAnim: {fileID: 9100000, guid: 3fafe8c5bfa91c640801697378799af9, type: 2}
+  - icedAnim: {fileID: 9100000, guid: 6f41476a4b116434787fa33bb0d4b7fa, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -33,6 +33,7 @@ public class CupItem : Item
                         currentAdditions.Remove(i);
                         currentAdditions.Add(c.result);
                         UpdateVisual();
+                        ChangeTemperature(c.result.defaultTemperature);
                         return true;
                     }
                 }
@@ -40,6 +41,7 @@ public class CupItem : Item
 
             currentAdditions.Add(newIngredient);
             UpdateVisual();
+            ChangeTemperature(newIngredient.defaultTemperature);
             return true;
         }
 
@@ -49,6 +51,7 @@ public class CupItem : Item
 
     public override void UpdateVisual()
     {
+
         foreach (var visual in data.visuals)
         {
             if (MatchesCombination(currentAdditions, visual.combination))

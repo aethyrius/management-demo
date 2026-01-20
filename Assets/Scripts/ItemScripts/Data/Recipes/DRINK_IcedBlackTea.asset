@@ -16,4 +16,5 @@ MonoBehaviour:
   requiredAdditions:
   - {fileID: 11400000, guid: 208c51e61c428534fa9ab9cbda040ff1, type: 2}
   - {fileID: 11400000, guid: 3c4a0709c6f0fce499291f302b07b3b5, type: 2}
-  sprite: {fileID: 6217799423943547763, guid: 6fc9d6e433b296f42b124322ea83f515, type: 3}
+  sprite: {fileID: -6720129546151524751, guid: b299c6dbd3762fb41a30fdec02993965, type: 3}
+  temperature: 2

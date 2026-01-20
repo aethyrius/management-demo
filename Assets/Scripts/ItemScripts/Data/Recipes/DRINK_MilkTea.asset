@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f82124c1c648d1478b4c887fe14ff2a, type: 3}
-  m_Name: DRINK_IceWater
+  m_Name: DRINK_MilkTea
   m_EditorClassIdentifier: Assembly-CSharp::DrinkRecipe
-  drinkName: Ice Water
+  drinkName: Milk Tea
   requiredAdditions:
-  - {fileID: 11400000, guid: 3c4a0709c6f0fce499291f302b07b3b5, type: 2}
-  - {fileID: 11400000, guid: f6534c90abd6efc40b1b12eab1700a46, type: 2}
-  sprite: {fileID: -6105571771558880617, guid: dae980a3c9d11da47b2b01c72b3163e5, type: 3}
-  temperature: 2
+  - {fileID: 11400000, guid: 208c51e61c428534fa9ab9cbda040ff1, type: 2}
+  - {fileID: 11400000, guid: 147e81e200db7b74992127c8e371d14f, type: 2}
+  sprite: {fileID: -2102031649783102840, guid: 5f59d5d14d908d54e868143c251118c9, type: 3}
+  temperature: 1

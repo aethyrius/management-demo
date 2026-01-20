@@ -15,5 +15,7 @@ public class IngredientData : ScriptableObject
         public IngredientData result;
     }
 
+    public Item.Temperature defaultTemperature;
+
     public List<UtilityConversion> utilityConversions;
 }

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6fc9d6e433b296f42b124322ea83f515
+guid: 042e2239181f6a24bb782e84982d8d36
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6217799423943547763
-    second: black-tea-cup 1_0
+      213: -808319648191509760
+    second: milk-cup_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: black-tea-cup 1_0
+      name: milk-cup_0
       rect:
         serializedVersion: 2
         x: 3
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 37b98ccf1af0a4650800000000000000
-      internalID: 6217799423943547763
+      spriteID: 00b8398009548c4f0800000000000000
+      internalID: -808319648191509760
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      black-tea-cup 1_0: 6217799423943547763
+      milk-cup_0: -808319648191509760
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: ING_Ice
   m_EditorClassIdentifier: Assembly-CSharp::IngredientData
   ingredientName: Ice
-  sprite: {fileID: 8690311588702655226, guid: e73837e0523a8ff498a3d638ae7aa595, type: 3}
+  sprite: {fileID: 8690311588702655226, guid: 108f4eb8128eb3549bd6ca611539dca4, type: 3}
+  defaultTemperature: 2
   utilityConversions: []

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 
 [CreateAssetMenu(fileName = "ItemData", menuName = "Scriptable Objects/ItemData")]
 public class ItemData : ScriptableObject
@@ -25,4 +26,6 @@ public class ItemData : ScriptableObject
     }
     public List<IngredientVisuals> visuals;
 
+    public AnimatorController hotAnim;
+    public AnimatorController icedAnim;
 }

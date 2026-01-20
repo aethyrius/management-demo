@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -10,59 +11,87 @@ public class Customer : MonoBehaviour
     public DrinkRecipe desiredItem;
     [SerializeField] private TMP_Text orderText;
     [SerializeField] private SpriteRenderer orderSprite;
+
+    public Transform registerPoint;
+    private Vector3 destination;
+
     public Color defaultColor = Color.white;
     public Color highlightColor = Color.gray;
 
-    public Transform registerPoint;
-    public float moveSpeed = 2f;
+    public float moveSpeed = 3f;
     public float interactDistance = 2f;
     public float customerDistance = 2f;
 
-    public bool hasPlacedOrder = false;
+    public enum CustomerState
+    {
+        Queueing,
+        Waiting,
+        Leaving
+    }
+
+    public CustomerState state = CustomerState.Queueing;
 
     private void Update()
     {
-        if (registerPoint == null) return;
+        if (spawner.register.orderPoint == null) return;
+        Customer prev = spawner.GetPrevCustomerInQueue(this);
 
-        Customer prev = spawner.GetPrevCustomerInList(this);
-
-        Vector3 destination;
-
-        if (prev)
+        switch (state)
         {
-            destination = new Vector3(prev.transform.position.x + customerDistance, 
-                                      prev.transform.position.y, transform.position.z);
-        }
-        else
-        {
-            destination = registerPoint.position;
+            case (CustomerState.Queueing):
+                if (prev)
+                {
+                    destination = new Vector3(prev.transform.position.x + customerDistance,
+                                              prev.transform.position.y, transform.position.z);
+                }
+                else
+                {
+                    destination = registerPoint.position;
+                }
+                break;
+
+            case (CustomerState.Waiting):
+                break;
+
+            case (CustomerState.Leaving):
+                break;
+
         }
 
         transform.position = Vector3.MoveTowards(
-            transform.position, destination, moveSpeed * Time.deltaTime
-        );
-    }
-
-    public bool CanInteract()
-    {
-        return (Vector2.Distance(transform.position, registerPoint.position) < interactDistance);
+                    transform.position, destination, moveSpeed * Time.deltaTime);
     }
 
     public void PlaceOrder()
     {
-        if (!hasPlacedOrder)
-        {
-            //Debug.Log("Customer wants " + desiredItem.name);
-            OrderManager.Instance.AddOrder(desiredItem);
-            hasPlacedOrder = true;
+        if (state != CustomerState.Queueing) return;
 
-            orderText.text = desiredItem.drinkName;
-            orderSprite.sprite = desiredItem.sprite;
-        }
+        OrderManager.Instance.AddOrder(desiredItem);
+        destination = spawner.GetRandomWaitingPosition();
+        state = CustomerState.Waiting;
     }
 
     public bool IsCorrectItem(Item item)
     {
         return item.MatchesOrder(desiredItem);
+    }
+
+    public IEnumerator Leave()
+    {
+        state = CustomerState.Leaving;
+
+        int random = Random.Range(0, 2);
+
+        if (random == 0)
+        {
+            destination = new Vector3(5f, 20f, 0f);
+        }
+        else
+        {
+            destination = new Vector3(5f, -20f, 0f);
+        }
+
+        yield return new WaitForSeconds(10);
+        Destroy(gameObject);
     }
 }
