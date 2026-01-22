@@ -15,13 +15,15 @@ public class Utility : Surface
     {
         base.OnInteract(player);
 
-        if (timer != null) StopCoroutine(timer);
-
-        if (!placedItem) return;
+        if (!placedItem)
+        {
+            if (timer != null) StopCoroutine(timer);
+            return;
+        }
 
         item = placedItem.GetComponent<ContainerItem>();
 
-        if (!item || !item.ingredient) return;
+        if (!item || !item.ingredient || player.holding) return;
 
         foreach (IngredientData.UtilityConversion c in item.ingredient.utilityConversions)
         {

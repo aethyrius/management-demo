@@ -15,7 +15,6 @@ MonoBehaviour:
   itemName: Cup
   allowedAdditions:
   - {fileID: 11400000, guid: f6534c90abd6efc40b1b12eab1700a46, type: 2}
-  - {fileID: 11400000, guid: 3c4a0709c6f0fce499291f302b07b3b5, type: 2}
   - {fileID: 11400000, guid: fc6396c40a387d344b6deab78a09ad4b, type: 2}
   - {fileID: 11400000, guid: 208c51e61c428534fa9ab9cbda040ff1, type: 2}
   - {fileID: 11400000, guid: 147e81e200db7b74992127c8e371d14f, type: 2}
@@ -24,21 +23,10 @@ MonoBehaviour:
   - combination: []
     sprite: {fileID: -6899248233868114457, guid: 5713f5a1ef287ce4ab5b2d108b24316d, type: 3}
   - combination:
-    - {fileID: 11400000, guid: 3c4a0709c6f0fce499291f302b07b3b5, type: 2}
-    sprite: {fileID: 8690311588702655226, guid: 108f4eb8128eb3549bd6ca611539dca4, type: 3}
-  - combination:
     - {fileID: 11400000, guid: f6534c90abd6efc40b1b12eab1700a46, type: 2}
     sprite: {fileID: -6105571771558880617, guid: dae980a3c9d11da47b2b01c72b3163e5, type: 3}
   - combination:
-    - {fileID: 11400000, guid: f6534c90abd6efc40b1b12eab1700a46, type: 2}
-    - {fileID: 11400000, guid: 3c4a0709c6f0fce499291f302b07b3b5, type: 2}
-    sprite: {fileID: -6105571771558880617, guid: dae980a3c9d11da47b2b01c72b3163e5, type: 3}
-  - combination:
     - {fileID: 11400000, guid: 208c51e61c428534fa9ab9cbda040ff1, type: 2}
-    sprite: {fileID: -6720129546151524751, guid: b299c6dbd3762fb41a30fdec02993965, type: 3}
-  - combination:
-    - {fileID: 11400000, guid: 208c51e61c428534fa9ab9cbda040ff1, type: 2}
-    - {fileID: 11400000, guid: 3c4a0709c6f0fce499291f302b07b3b5, type: 2}
     sprite: {fileID: -6720129546151524751, guid: b299c6dbd3762fb41a30fdec02993965, type: 3}
   - combination:
     - {fileID: 11400000, guid: 147e81e200db7b74992127c8e371d14f, type: 2}

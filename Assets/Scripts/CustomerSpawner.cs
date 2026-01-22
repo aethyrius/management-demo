@@ -38,8 +38,8 @@ public class CustomerSpawner : MonoBehaviour
     {
         GameObject customer = Instantiate(customerPrefab, transform.position, transform.rotation);
         Customer script = customer.GetComponent<Customer>();
-        script.desiredItem = database.GetRandomDrink();
         script.spawner = this;
+        script.order = database.GetRandomOrder(OrderManager.Instance.GetNextOrderNum());
         script.registerPoint = register.orderPoint;
         activeCustomers.Add(script);
 
@@ -84,13 +84,25 @@ public class CustomerSpawner : MonoBehaviour
     {
         if (register.orderPoint == null) return Vector2.zero;
 
-        BoxCollider2D collider = register.waitingArea.GetComponent<BoxCollider2D>();
+        BoxCollider2D[] colliders = register.waitingArea.GetComponents<BoxCollider2D>();
+        BoxCollider2D collider = colliders[Random.Range(0, colliders.Length)];
+
+        if (collider == null) return register.waitingArea.transform.position;
+
         Bounds bounds = collider.bounds;
 
-        return new Vector3(
+        Vector2 randomPoint = new Vector2(
             Random.Range(bounds.min.x, bounds.max.x),
-            Random.Range(bounds.min.y, bounds.max.y),
-            0f
+            Random.Range(bounds.min.y, bounds.max.y)
         );
+
+        if (collider.OverlapPoint(randomPoint))
+        {
+            float z = register.waitingArea.transform.position.z;
+            Debug.Log("Going to: " + "(" + randomPoint.x + ", " + randomPoint.y + ", " + z);
+            return new Vector3(randomPoint.x, randomPoint.y, z);
+        }
+
+        return register.waitingArea.transform.position;
     }
 }

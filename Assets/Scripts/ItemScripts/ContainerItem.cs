@@ -105,7 +105,10 @@ public class ContainerItem : Item
         if (!ingredient)
         {
             ChangeTemperature(Temperature.Normal);
-            spriteRenderer.sprite = data.visuals[0].sprite;
+            if (data.visuals.Count > 0)
+            {
+                spriteRenderer.sprite = data.visuals[0].sprite;
+            }
             return;
         }
 

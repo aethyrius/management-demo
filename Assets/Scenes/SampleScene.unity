@@ -1739,9 +1739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemDatabase
   allDrinks:
   - {fileID: 11400000, guid: 48eab97904a3bd44a9bcb6e00abf754f, type: 2}
-  - {fileID: 11400000, guid: aec355914df110341925035dfc26b9d5, type: 2}
   - {fileID: 11400000, guid: 6aefda09dc9459d468fb4aa1bc5e9401, type: 2}
-  - {fileID: 11400000, guid: 2e03e33283e35244e85353ce713b21f8, type: 2}
   - {fileID: 11400000, guid: bcf2021d9410ab14fbd945bd7f895ef2, type: 2}
 --- !u!1 &1371013379
 GameObject:
@@ -1924,8 +1922,8 @@ Transform:
   m_GameObject: {fileID: 1381519425}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.3, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalPosition: {x: 3.75, y: 0, z: 0}
+  m_LocalScale: {x: 4, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1477802661}
@@ -1946,7 +1944,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -1960,11 +1958,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.3}
+  m_Offset: {x: 0, y: 0.75}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1974,7 +1972,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 0.4}
+  m_Size: {x: 1.05, y: 1}
   m_EdgeRadius: 0
 --- !u!61 &1381519428
 BoxCollider2D:
@@ -1992,7 +1990,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -2006,11 +2004,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.3}
+  m_Offset: {x: 0, y: -0.75}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2020,7 +2018,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 0.4}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &1477802659
 GameObject:
@@ -2210,7 +2208,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d232d8d5149da5e47928561aa4883f56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OrderManager
-  drinkOrders: []
   score: {fileID: 491318280}
   orderNum: 1
   ticketLine: {fileID: 2130808612}
@@ -2417,8 +2414,8 @@ MonoBehaviour:
   customerPrefab: {fileID: 4450566875196984338, guid: 9d4c4dc58d8fd0c4097ebb8c70489331, type: 3}
   register: {fileID: 1477802663}
   maxCustomers: 3
-  maxSpawnTime: 20
-  minSpawnTime: 10
+  maxSpawnTime: 10
+  minSpawnTime: 5
   activeCustomers: []
 --- !u!1 &1880118533
 GameObject:
@@ -2567,13 +2564,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1880118533}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d70b425429f19542a218e6e12e32c1a, type: 3}
+  m_Script: {fileID: 11500000, guid: f79b810266aab1c429f2cf343bdfc462, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::IngredientDispenser
+  m_EditorClassIdentifier: Assembly-CSharp::TemperatureDispenser
   defaultColor: {r: 0, g: 0, b: 0, a: 0}
   highlightColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   spriteRenderer: {fileID: 0}
-  ingredient: {fileID: 11400000, guid: 3c4a0709c6f0fce499291f302b07b3b5, type: 2}
+  temperature: 2
 --- !u!1 &1902669082
 GameObject:
   m_ObjectHideFlags: 0

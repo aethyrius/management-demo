@@ -6,8 +6,7 @@ public class Register : Interactable
     public CustomerSpawner spawner;
     public Transform orderPoint;
     public Transform waitingArea;
-
-    private Customer highlightedCustomer;
+    private float customerReach = 0.5f;
 
     public override void OnInteract(PlayerInteraction player)
     {
@@ -20,22 +19,22 @@ public class Register : Interactable
 
             foreach (Customer c in spawner.activeCustomers) {
 
-                if (c.IsCorrectItem(heldItem)) {
+                if (heldItem.MatchesOrder(c.order)) {
                     matchedCustomer = c;
-                    highlightedCustomer = c;
                     break;
                 }
             }
 
             if (matchedCustomer)
             {
-                OrderManager.Instance.CompleteOrder(matchedCustomer.desiredItem);
+                OrderManager.Instance.CompleteOrder(matchedCustomer.order);
                 matchedCustomer.StartCoroutine(matchedCustomer.Leave());
 
                 Destroy(player.holding.gameObject);
                 player.holding = null;
 
                 spawner.activeCustomers.Remove(matchedCustomer);
+                matchedCustomer = null;
                 return;
             }
             else
@@ -49,6 +48,7 @@ public class Register : Interactable
 
         if (CanInteract(currentCustomer))
         {
+            SetHighlighted(false);
             currentCustomer.PlaceOrder();
         }
     }
@@ -59,7 +59,6 @@ public class Register : Interactable
         {
             if (c.state == Customer.CustomerState.Queueing)
             {
-                highlightedCustomer = c;
                 return c;
             }
         }
@@ -70,22 +69,20 @@ public class Register : Interactable
     public bool CanInteract(Customer customer)
     {
         if (customer.state == Customer.CustomerState.Queueing &&
-            customer.state != Customer.CustomerState.Leaving &&
-            Vector3.Distance(orderPoint.transform.position, customer.transform.position) < 1f)
+            Vector3.Distance(customer.transform.position, orderPoint.transform.position) < customerReach)
         {
-            highlightedCustomer = customer;
             return true;
         }
 
-        SetHighlighted(false);
         return false;
     }
 
     public override void SetHighlighted(bool highlighted)
     {
-        if (highlightedCustomer) {
-            SpriteRenderer customerSprite = highlightedCustomer.GetComponent<SpriteRenderer>();
-            customerSprite.color = highlighted ? highlightedCustomer.highlightColor : highlightedCustomer.defaultColor;
+        Customer customer = NextToOrder();
+        if (customer && Vector3.Distance(customer.transform.position, orderPoint.transform.position) < customerReach)
+        {
+            customer.GetComponent<SpriteRenderer>().color = highlighted ? customer.highlightColor : customer.defaultColor;
         }
     }
 }

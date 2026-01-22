@@ -5,13 +5,15 @@ public class CupItem : Item
 {
     public List<IngredientData> currentAdditions = new();
 
-    public override bool MatchesOrder(DrinkRecipe recipe)
+    public override bool MatchesOrder(ItemOrder order)
     {
-        if (currentAdditions.Count != recipe.requiredAdditions.Count) return false;
+        if (order.temperature != temperature) return false;
+
+        if (currentAdditions.Count != order.recipe.requiredAdditions.Count) return false;
 
         foreach (IngredientData ingredient in currentAdditions)
         {
-            if (!recipe.requiredAdditions.Contains(ingredient)) return false;
+            if (!order.recipe.requiredAdditions.Contains(ingredient)) return false;
         }
 
         return true;
@@ -34,6 +36,11 @@ public class CupItem : Item
                         currentAdditions.Add(c.result);
                         UpdateVisual();
                         ChangeTemperature(c.result.defaultTemperature);
+
+                        if (temperature == Temperature.Normal)
+                        {
+                            
+                        }
                         return true;
                     }
                 }

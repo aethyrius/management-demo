@@ -373,7 +373,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -419,13 +419,13 @@ MonoBehaviour:
   desiredItem: {fileID: 0}
   orderText: {fileID: 4148094662835716506}
   orderSprite: {fileID: 2599975271834438919}
+  registerPoint: {fileID: 0}
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   highlightColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  registerPoint: {fileID: 0}
   moveSpeed: 2
   interactDistance: 1
   customerDistance: 2
-  hasPlacedOrder: 0
+  state: 0
 --- !u!50 &-2126583630516847192
 Rigidbody2D:
   serializedVersion: 5

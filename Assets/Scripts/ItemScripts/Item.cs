@@ -12,8 +12,7 @@ public class Item : Interactable
         Iced
     }
 
-    [SerializeField]
-    Temperature temperature;
+    public Temperature temperature;
 
     private Animator animator;
 
@@ -29,16 +28,28 @@ public class Item : Interactable
             switch (temperature)
             {
                 case (Temperature.Normal):
-                    break;
+                    return;
+
                 case (Temperature.Hot):
+
+                    if (this.temperature == Temperature.Iced)
+                    {
+                        this.temperature = Temperature.Normal;
+                        animator.runtimeAnimatorController = null;
+                        return;
+                    }
+
                     animator.runtimeAnimatorController = data.hotAnim;
                     break;
+
                 case (Temperature.Iced):
+
                     animator.runtimeAnimatorController = data.icedAnim;
                     break;
             }
 
             this.temperature = temperature;
+            return;
         }
     }
 
@@ -53,7 +64,7 @@ public class Item : Interactable
         transform.localPosition = new Vector3(0, player.transform.localScale.y / 2, 0);
     }
 
-    public virtual bool MatchesOrder(DrinkRecipe recipe)
+    public virtual bool MatchesOrder(ItemOrder order)
     {
         return false;
     }

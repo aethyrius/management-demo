@@ -7,5 +7,5 @@ public class DrinkRecipe : ScriptableObject
     public string drinkName;
     public List<IngredientData> requiredAdditions;
     public Sprite sprite;
-    public Item.Temperature temperature;
+    public Item.Temperature[] temperatures;
 }

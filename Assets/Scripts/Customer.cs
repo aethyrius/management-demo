@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class Customer : MonoBehaviour
 {
     public CustomerSpawner spawner;
-    public DrinkRecipe desiredItem;
+    public ItemOrder order;
     [SerializeField] private TMP_Text orderText;
     [SerializeField] private SpriteRenderer orderSprite;
 
@@ -19,7 +19,6 @@ public class Customer : MonoBehaviour
     public Color highlightColor = Color.gray;
 
     public float moveSpeed = 3f;
-    public float interactDistance = 2f;
     public float customerDistance = 2f;
 
     public enum CustomerState
@@ -33,7 +32,7 @@ public class Customer : MonoBehaviour
 
     private void Update()
     {
-        if (spawner.register.orderPoint == null) return;
+        if (!spawner.register.orderPoint) return;
         Customer prev = spawner.GetPrevCustomerInQueue(this);
 
         switch (state)
@@ -41,8 +40,7 @@ public class Customer : MonoBehaviour
             case (CustomerState.Queueing):
                 if (prev)
                 {
-                    destination = new Vector3(prev.transform.position.x + customerDistance,
-                                              prev.transform.position.y, transform.position.z);
+                    destination = prev.transform.position + Vector3.right * customerDistance;
                 }
                 else
                 {
@@ -66,29 +64,27 @@ public class Customer : MonoBehaviour
     {
         if (state != CustomerState.Queueing) return;
 
-        OrderManager.Instance.AddOrder(desiredItem);
+        OrderManager.Instance.AddOrder(order);
         destination = spawner.GetRandomWaitingPosition();
         state = CustomerState.Waiting;
     }
 
-    public bool IsCorrectItem(Item item)
+    /*public bool IsCorrectItem(Item item)
     {
-        return item.MatchesOrder(desiredItem);
-    }
+        return item.MatchesOrder(order); // && (item.temperature == order.temperature));
+    }*/
 
     public IEnumerator Leave()
     {
         state = CustomerState.Leaving;
 
-        int random = Random.Range(0, 2);
-
-        if (random == 0)
+        if (transform.position.y > registerPoint.transform.position.y)
         {
-            destination = new Vector3(5f, 20f, 0f);
+            destination = transform.position + (Vector3.up * 20f);
         }
         else
         {
-            destination = new Vector3(5f, -20f, 0f);
+            destination = transform.position + (Vector3.up * -20f);
         }
 
         yield return new WaitForSeconds(10);
